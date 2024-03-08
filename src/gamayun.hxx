@@ -17,15 +17,12 @@ class Gamayun {
 
     public:
         
-        int buffer;
         int PortForConnection;
         int ServerSocket, ClientSocket;
         struct sockaddr_in ServerAddress, ClientAddress;
         socklen_t ClientAddress_len = sizeof(ClientAddress);
 
         void handle_client() {
-
-            char buffer[buffer];
 
             send(ClientSocket, ResponseHttp::callback().c_str(), ResponseHttp::callback().size(), 0);
 
@@ -35,8 +32,6 @@ class Gamayun {
         Gamayun( int PortForConnection ){
 
             this->PortForConnection = PortForConnection;
-
-            this->buffer = ResponseHttp::callback().size() +1;
 
             ServerSocket = socket(AF_INET, SOCK_STREAM, 0);
 

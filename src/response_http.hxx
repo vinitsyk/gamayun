@@ -5,7 +5,6 @@
 
 #include "status_code.hxx"
 #include "html_content.hxx"
-#include "headers_http.hxx"
 
 struct ResponseHttp
 {
